@@ -1,7 +1,7 @@
 cd $HOME
 
 sudo pacman -Syu
-sudo pacman -S git curl i3-wm dmenu firefox xorg-server xorg-xinit kitty i3status openssh
+sudo pacman -S git curl i3-wm dmenu firefox xorg-server xorg-xinit kitty i3status openssh arandr
 
 echo "export TERMINAL=/usr/bin/kitty" >> .bashrc
 
