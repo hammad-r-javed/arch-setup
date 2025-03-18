@@ -1,23 +1,28 @@
 cd $HOME
 
 sudo pacman -Syu
-sudo pacman -S git curl i3-wm dmenu firefox xorg-server xorg-xinit ghostty i3status openssh
+sudo pacman -S git curl i3-wm dmenu firefox xorg-server xorg-xinit alacritty i3status openssh
 
 # setting ghostty to default term
-echo "export TERMINAL=/usr/bin/ghostty" >> .bashrc
+echo "export TERMINAL=/usr/bin/alacritty" >> .bashrc
 
 mkdir Documents Downloads Pictures Videos
 mkdir Documents/projects
 
-# i3 stuff
-## autstart i3
+# autstart i3
 echo "exec i3" >> .xinitrc
 
-## configure i3 
-# <todo>
+# dotfiles
+git clone https://github.com/hammad-r-javed/dotfiles.git
 
-## configure nvim
-# <todo>
+# configure i3 
+cp dotfiles/i3/config .config/i3/
+sudo cp dotfiles/i3/i3status.conf /etc/
+
+# configure nvim
+mkdir .config/nvim
+cp -r dotfiles/nvim/lua .config/nvim
+cp dotfiles/nvim/init.lua .config/nvim
 
 # finish
 startx
