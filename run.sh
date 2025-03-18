@@ -1,10 +1,9 @@
 cd $HOME
 
 sudo pacman -Syu
-sudo pacman -S git curl i3-wm dmenu firefox xorg-server xorg-xinit alacritty i3status openssh
+sudo pacman -S git curl i3-wm dmenu firefox xorg-server xorg-xinit kitty i3status openssh
 
-# setting ghostty to default term
-echo "export TERMINAL=/usr/bin/alacritty" >> .bashrc
+echo "export TERMINAL=/usr/bin/kitty" >> .bashrc
 
 mkdir Documents Downloads Pictures Videos
 mkdir Documents/projects
