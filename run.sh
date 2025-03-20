@@ -27,6 +27,14 @@ cp -r dotfiles/nvim/lua .config/nvim
 cp dotfiles/nvim/init.lua .config/nvim
 ls -la .config/nvim
 
+# base-devel - for installing AUR packages
+sudo pacman -S base-devel
+
+# nix setup
+sh <(curl -L https://nixos.org/nix/install) --daemon
+## enabling experimental features, for flakes
+echo "experimental-features = nix-command flakes" | sudo tee /etc/nix/nix.conf
+
 # finish
 read -p "press Enter to run 'startx': "
 startx
