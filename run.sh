@@ -1,7 +1,7 @@
 cd $HOME
 
 sudo pacman -Syu
-sudo pacman -S git curl i3-wm dmenu firefox xorg-server xorg-xinit kitty i3status openssh arandr
+sudo pacman -S git curl i3-wm dmenu firefox xorg-server xorg-xinit kitty i3status openssh arandr base-devel
 
 echo "export TERMINAL=/usr/bin/kitty" >> .bashrc
 
@@ -26,9 +26,6 @@ mkdir .config/nvim
 cp -r dotfiles/nvim/lua .config/nvim
 cp dotfiles/nvim/init.lua .config/nvim
 ls -la .config/nvim
-
-# base-devel - for installing AUR packages
-sudo pacman -S base-devel
 
 # nix setup
 sh <(curl -L https://nixos.org/nix/install) --daemon
